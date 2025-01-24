@@ -1,25 +1,25 @@
 import random
 
 
-print("1 dan 10 gacha son o'yladim.Topa olasizmi?")
+print("Я загадал число (от 1 до 9).Сможете угадать?")
 comp_number=random.randint(1,10)
 
 user_number=int(input(" "))
 cnt_user=0
 ishora=True
 while ishora:
-    # print("1 dan 10 gacha son o'yladim.Topa olasizmi?")
+    
     if comp_number==user_number:
-        print(f"TOPDINGIZ! {comp_number} sonini o'ylagan edim,{cnt_user} ta taxmin bilan topdingiz.Tabriklayman!!")
+        print(f"Бингоо!  Я думал о числе {comp_number}, Вы нашли его с {cnt_user} попыток.Поздравляю!!")
         ishora=False
         
     if user_number>comp_number:
-        print("Xato,men o'ylagan son bundan kichikroq.Yana harakat qiling:")
+        print("Ошибка, мое загадданое число меньше этого. Попробуйте еще раз:")
         cnt_user+=1
         user_number=int(input(" "))
 
     if user_number<comp_number:
-        print("Xato,men o'ylagan son bundan kattaroq.Yana harakat qiling:")
+        print("Ошибка, мое загадданое число больше этого. Попробуйте еще раз:")
         cnt_user+=1
         user_number=int(input(" "))
 
@@ -29,8 +29,8 @@ print("")
 print("")
 
 
-print("1 dan 10 gacha son o'ylang.Men topishga harakat qilaman")
-print("Son o'ylagan bo'lsangiz istalgan tugmani bosing. ")
+print("Задумайте число от 1 до 10. Я попробую его найти.")
+print("Если вы задумали , нажмите любую кнопку...")
 print("")
 
 low=1
@@ -40,11 +40,11 @@ cnt_computer=0
 while True:
     comp_number = random.randint(low, high)
     cnt_computer += 1
-    print(f"Men o'ylagan son: {comp_number}.")
-    user_input = input("To'g'ri (T), men o'ylagan son bundan kattaroq (+), yoki kichikroq (-): ").lower()
+    print(f"Число, которое я задумал: {comp_number}.")
+    user_input = input("Правильно (T), задуманное  число больше (+) или меньше (-), чем это: ").lower()
 
     if user_input == 't':
-        print(f"Siz soningizni {cnt_computer}-chi urinishda topdim!")
+        print(f"Я угадал  {cnt_computer}-(й,ой) попытки!")
         break
 
     elif user_input == '+':
@@ -54,7 +54,7 @@ while True:
         high = comp_number - 1
 
     else:
-        print("Iltimos, faqat '+' yoki '-' yoki 'T' ni kiriting.")
+        print("Пожалуйста введите '+' или '-' или 'T'")
 
 
 print("")
@@ -62,11 +62,11 @@ print("")
 
 #Yakun
 if cnt_user<cnt_computer:
-    print(f"Siz {cnt_user} ta taxmin bilan topdingiz va  yutdingiz")
+    print(f"Вы нашли мое число с {cnt_user} попыткой и выиграли!")
 elif cnt_user>cnt_computer:
-    print(f"Men {cnt_computer} ta taxmin bilan yutdim")
+    print(f"Йесс,Я победил с {cnt_computer} попыткой ")
 else:
-    print("Durrang.Do'stlik g'alaba qozondi!!!")
+    print("Ничья. Победила дружба.!!!")
 
 print("")
 print("")
